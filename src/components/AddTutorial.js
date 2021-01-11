@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {Container,Row,Col,Form,Button} from 'react-bootstrap';
 import TutorialDataService from "../services/TutorialService";
 
 const AddTutorial = () => {
@@ -53,37 +54,43 @@ const AddTutorial = () => {
           </button>
         </div>
       ) : (
-        <div>
-          <div className="form-group">
-            <label htmlFor="title">Title</label>
-            <input
-              type="text"
-              className="form-control"
-              id="title"
-              required
-              value={tutorial.title}
-              onChange={handleInputChange}
-              name="title"
-            />
-          </div>
+        <Container>
+          <Row>
+            <Col>
+              <Form>
+                <div className="form-group">
+                  <label htmlFor="title">Title</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="title"
+                    required
+                    value={tutorial.title}
+                    onChange={handleInputChange}
+                    name="title"
+                  />
+                </div>
 
-          <div className="form-group">
-            <label htmlFor="description">Description</label>
-            <input
-              type="text"
-              className="form-control"
-              id="description"
-              required
-              value={tutorial.description}
-              onChange={handleInputChange}
-              name="description"
-            />
-          </div>
+                <div className="form-group">
+                  <label htmlFor="description">Description</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="description"
+                    required
+                    value={tutorial.description}
+                    onChange={handleInputChange}
+                    name="description"
+                  />
+                </div>
 
-          <button onClick={saveTutorial} className="btn btn-success">
-            Submit
-          </button>
-        </div>
+                <Button onClick={saveTutorial} className="btn" type="submit">
+                  Submit
+                </Button>
+                </Form>
+              </Col>
+          </Row>
+        </Container>
       )}
     </div>
   );

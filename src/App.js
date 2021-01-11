@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 import './App.css';
-import {Jumbotron,Container,Row,Col,Navbar,Navs,Button} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.css';
+import {Jumbotron,Container,Row,Col,Navbar,Nav,Button} from 'react-bootstrap';
 import Main from './components/MainComponent';
 import About from './components/AboutComponent';
 import Tutorial from './components/Tutorial';
@@ -22,13 +23,13 @@ const App = () => {
                 rel="noopener noreferrer"
               > LOGO
               </a>
-               <nav>
-                  <Link to="/">Home </Link>
-                  <Link to={"/tutorials"} className="nav-link">Tutorials</Link>
-                  <Link to={"/add"} className="nav-link">Add Tutorials</Link>
-                  <Link to="/about">About Us </Link>
-                  <Link to="/testapi">Consume API</Link>
-              </nav>
+               <Nav className="justify-content-center" activeKey="/home">
+                  <Nav.Item><Link to="/">Home </Link></Nav.Item>
+                  <Nav.Item><Link to={"/tutorials"} className="nav-link">Tutorials </Link></Nav.Item>
+                  <Nav.Item><Link to={"/add"} className="nav-link">Add Tutorials </Link></Nav.Item>
+                  <Nav.Item><Link to={"/about"}>About Us </Link></Nav.Item>
+                  <Nav.Item><Link to={"/testapi"}>Consume API </Link></Nav.Item>
+              </Nav>
          </Navbar>
 
          <Container>

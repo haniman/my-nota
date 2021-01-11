@@ -3,7 +3,6 @@ import axios from 'axios';
 import List from './List';
 import WithListLoading from './WithListLoading';
 
-
 const TestApi = () => {
 
 const ListLoading = WithListLoading(List);
@@ -24,7 +23,7 @@ useEffect(() => {
 return (
     <div className='App'>
       <div className='container'>
-        <h1>My Repositories</h1>
+        <h2>Tutorial Repositories</h2>
       </div>
       <div className='repo-container'>
         <ListLoading isLoading={AppState.loading} repos={AppState.repos} />

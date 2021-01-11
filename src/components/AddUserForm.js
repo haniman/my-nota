@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
-import {Button,Table,Form} from 'react-bootstrap'
+import {Container,Row,Col,Button,Table,Form} from 'react-bootstrap'
 
 const AddUserForm = (props) => {
 
@@ -25,15 +24,20 @@ const AddUserForm = (props) => {
 	}
 
   return (
-    <Form onSubmit={submitForm}>
-      <label>Full Name</label>
-      <input type="text" name="name" value={user.name} onChange={handleInputChange} />
-      <label>Username</label>
-      <input type="text" name="username" value={user.username} onChange={handleInputChange}  />
-      <Button>Add new user</Button>
-    </Form>
+  	  <Container fluid>
+          <Row>
+            <Col>
+			    <Form onSubmit={submitForm}>
+			      <Form.Label>Full Name</Form.Label>
+			      <Form.Control placeholder="Enter full name" name="name" value={user.name} onChange={handleInputChange} />
+			      <Form.Label>Username</Form.Label>
+			      <Form.Control placeholder="Enter username" name="username" value={user.username} onChange={handleInputChange}  />
+			     <Button variant="primary" type="submit">Add new user</Button>
+			    </Form>
+			 </Col>
+          </Row>
+        </Container>
   )
 }
 
-//dont forget to export everytime!!
 export default AddUserForm
